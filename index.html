@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,23 +13,80 @@
 </head>
 
 <body>
-    <div class="container">	
-        <div class="user-container"></div>	
-        <div class="quote-container"></div>	
-        <div class="content-container">	
-            <div class="pokemon-container"></div>	
-            <div class="meat-container"></div>	
-        </div>	
-        <div class="friends">	
-            <h4>Friends</h4>	
-            <div class="friends-container">	
-            </div>	
-        </div>	
-        <div class="buttons">	
-            <button>Load User Data</button>	
-            <button>Display User</button>	
-        </div>	
+
+    <div class="container">
+        <div class="user-container"></div>
+
+        <div class="quote-container"></div>
+
+        <div class="content-container">
+            <div class="pokemon-container"></div>
+            <div class="meat-container"></div>
+        </div>
+
+        <div class="friends">
+            <h4>Friends</h4>
+            <div class="friends-container">
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <button id="loadButton">Load User Data</button>
+            <button id="displayButton">Display User</button>
+        </div>
+
     </div>
+    
+
+
+
+
+    <script id="main-user-template" type="text/x-handlebars-template">
+        <img src="{{imgURL}}" alt="No pic found" id="profile-pic">
+        <div class="user-info">
+            <p>{{name}}</p>
+            <p>{{location}}</p>
+        </div>
+    </script>
+
+
+    <script id="knyeQuote-template" type="text/x-handlebars-template">
+        <p>Favorite quote:</p>
+        {{quote}} <br>
+        ~ Kanye west
+    </script>
+
+
+    <script id="poke-template" type="text/x-handlebars-template">
+        <img src="{{pokeImgURL}}" alt="No pic found" id="pokemon-image">
+        <p id="pokemon-text">Favorite pokemon: {{pokeName}}</p>
+    </script>
+
+
+    <script id="meat-text-template" type="text/x-handlebars-template">
+
+        <p class="meat-text">About me:<br>{{meatText}}</p>
+    </script>
+
+
+    <script id="friends-users-template" type="text/x-handlebars-template">
+        {{#each friendUsers}}
+            <ul>
+                <li>{{name.title}} {{name.first}} {{name.last}}</li>
+            </ul>
+        {{/each}}
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="APIManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
