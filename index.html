@@ -33,18 +33,22 @@
         <div class="buttons">
             <button id="loadButton">Load User Data</button>
             <button id="displayButton">Display User</button>
+            <button id="saveUserButton">Save User Page</button>
+            <button id="loadUserButton">Load User Page</button>
+            <select id="savedUsers">
+            </select>
         </div>
 
     </div>
     
 
 
-
+                        <!-- Handlebars templates: -->
 
     <script id="main-user-template" type="text/x-handlebars-template">
         <img src="{{imgURL}}" alt="No pic found" id="profile-pic">
         <div class="user-info">
-            <p>{{name}}</p>
+            <p id="userName">{{name}}</p>
             <p>{{location}}</p>
         </div>
     </script>
@@ -59,7 +63,7 @@
 
     <script id="poke-template" type="text/x-handlebars-template">
         <img src="{{pokeImgURL}}" alt="No pic found" id="pokemon-image">
-        <p id="pokemon-text">Favorite pokemon: {{pokeName}}</p>
+        <p id="pokemon-text">Favorite pokemon: {{capitalized pokeName}}</p>
     </script>
 
 

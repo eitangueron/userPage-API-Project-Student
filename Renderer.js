@@ -1,8 +1,13 @@
+// dothis(template, template-selector, where to append to)
+Handlebars.registerHelper('capitalized',function (aName) {
+    const name = aName.split(' ')
+    const capd = []
+    name.forEach(name => capd.push(name[0].toUpperCase() + name.slice(1,).toLowerCase()))
+    return capd.join(' ')
+})
+
+
 class Renderer {
-    constructor(){
-
-    }
-
 
     renderMainUser(mainUser){
         const imgUrl = mainUser.picture.large
@@ -17,10 +22,8 @@ class Renderer {
         $('.user-container').append(newHTML)
     }
 
+
     renderFriendUsers(friendsUsersArray){
-
-        // dothis(template, template-selector, where to append to)
-
 
         const source = $('#friends-users-template').html()
         const template = Handlebars.compile(source)
