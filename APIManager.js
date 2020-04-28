@@ -2,7 +2,6 @@ const getRandomNum = function(maxNum){   //max num is included
     return Math.floor(Math.random() * Math.floor(maxNum+1));  
 }
 
-//This is the class that will manage all your APIs
 
 class APIManager {
     constructor() {

@@ -5,14 +5,12 @@ const renderer = new Renderer()
 
 
 
-
 $('#loadButton').on('click',function(){
     apiManager.getUsers()
     apiManager.getKanyeQuote()
     apiManager.getRandomPoke()
     apiManager.getMeatTalk()
 })
-
 
 
 const diaplsyData = function(dataObj){
